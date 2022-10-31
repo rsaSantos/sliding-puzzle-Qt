@@ -1,0 +1,22 @@
+# ninja log v5
+2	71	1666970616603256279	.qt_plugins/Qt6_QmlPlugins_Imports_SlidingPuzzle.cmake	be95c94110c8a734
+4	15	1667085451772454425	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/mocs_compilation.cpp	50dbb59039530e89
+39	368	1667085465882306744	SlidingPuzzle	a5006c1650e05e72
+2	71	1666970616603256279	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_SlidingPuzzle.cmake	be95c94110c8a734
+4	15	1667085451772454425	SlidingPuzzle_autogen/timestamp	50dbb59039530e89
+4	15	1667085451772454425	SlidingPuzzle_autogen/mocs_compilation.cpp	50dbb59039530e89
+4	15	1667085451772454425	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/timestamp	50dbb59039530e89
+3	15	1667085465532310407	SlidingPuzzle_autogen/EWIEGA46WW/qrc_qml.cpp	7f938c794d02a099
+26	1435	1667085453192439562	CMakeFiles/SlidingPuzzle.dir/controller.cpp.o	f2da9bf6a1cfd295
+3	15	1667085465532310407	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/EWIEGA46WW/qrc_qml.cpp	7f938c794d02a099
+168	1913	1667084955641006911	CMakeFiles/SlidingPuzzle.dir/SlidingPuzzle_autogen/mocs_compilation.cpp.o	bb3bb11e7950bad4
+168	2091	1667084955821005004	CMakeFiles/SlidingPuzzle.dir/main.cpp.o	64939b6112eb61cf
+15	39	1667085465555643497	CMakeFiles/SlidingPuzzle.dir/SlidingPuzzle_autogen/EWIEGA46WW/qrc_qml.cpp.o	a4189e5968ae2831
+4	158	1667085729443132241	SlidingPuzzle_autogen/timestamp	50dbb59039530e89
+4	158	1667085729443132241	SlidingPuzzle_autogen/mocs_compilation.cpp	50dbb59039530e89
+4	158	1667085729443132241	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/timestamp	50dbb59039530e89
+4	158	1667085729443132241	/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/mocs_compilation.cpp	50dbb59039530e89
+159	1701	1667085730986453877	CMakeFiles/SlidingPuzzle.dir/controller.cpp.o	f2da9bf6a1cfd295
+158	1990	1667085731276451678	CMakeFiles/SlidingPuzzle.dir/SlidingPuzzle_autogen/mocs_compilation.cpp.o	bb3bb11e7950bad4
+158	2072	1667085731359784380	CMakeFiles/SlidingPuzzle.dir/main.cpp.o	64939b6112eb61cf
+2072	2381	1667085731666448720	SlidingPuzzle	a5006c1650e05e72
