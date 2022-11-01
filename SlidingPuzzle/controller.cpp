@@ -22,7 +22,6 @@ void Controller::createBoard(QString difficulty)
     // Create board list...
     QList<QString> newBoard = QList<QString>();
 
-    // TODO: VERIFY!
     if(difficulty == "random")
     {
         // Seed random number generator.
@@ -53,6 +52,8 @@ void Controller::createBoard(QString difficulty)
         // Replace number 16 with void piece.
         int sixteenthIndex = newBoard.indexOf("16");
         newBoard.replace(sixteenthIndex, voidPiece());
+
+        // TODO: Check if puzzle is solvable
     }
     else{
         int nMoves = 0;
@@ -92,7 +93,7 @@ void Controller::createBoard(QString difficulty)
             QList<int> possibleMoves = QList<int>(0);
             for(int j = 0; j < nPieces() - 1; ++j)
             {
-                if(isMovable(newBoard, j, emptyIndex))
+                if(j != lastRandomMove && isMovable(newBoard, j, emptyIndex))
                 {
                     possibleMoves.append(j);
                 }
