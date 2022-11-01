@@ -31,7 +31,7 @@ public:
     int nCols() const;
 
     Q_INVOKABLE void createBoard(QString difficulty);
-    Q_INVOKABLE bool pieceClicked(int pieceIndex);
+    Q_INVOKABLE bool movePiece(int pieceIndex);
     Q_INVOKABLE void resetGame();
 
     const QList<QString> &initialBoard() const;
@@ -48,6 +48,7 @@ private:
     int m_nRows;
     int m_nCols;
     QString m_voidPiece;
+    bool isMovable(QList<QString> board, int movingIndex, int emptyIndex);
 };
 
 #endif // CONTROLLER_H

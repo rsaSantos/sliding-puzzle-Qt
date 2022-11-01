@@ -34,7 +34,7 @@ struct qt_meta_stringdata_Controller_t {
     char stringdata3[20];
     char stringdata4[12];
     char stringdata5[11];
-    char stringdata6[13];
+    char stringdata6[10];
     char stringdata7[11];
     char stringdata8[10];
     char stringdata9[6];
@@ -54,15 +54,15 @@ Q_CONSTINIT static const qt_meta_stringdata_Controller_t qt_meta_stringdata_Cont
         QT_MOC_LITERAL(25, 19),  // "initialBoardChanged"
         QT_MOC_LITERAL(45, 11),  // "createBoard"
         QT_MOC_LITERAL(57, 10),  // "difficulty"
-        QT_MOC_LITERAL(68, 12),  // "pieceClicked"
-        QT_MOC_LITERAL(81, 10),  // "pieceIndex"
-        QT_MOC_LITERAL(92, 9),  // "resetGame"
-        QT_MOC_LITERAL(102, 5),  // "board"
-        QT_MOC_LITERAL(108, 12),  // "initialBoard"
-        QT_MOC_LITERAL(121, 7),  // "nPieces"
-        QT_MOC_LITERAL(129, 5),  // "nRows"
-        QT_MOC_LITERAL(135, 5),  // "nCols"
-        QT_MOC_LITERAL(141, 9)   // "voidPiece"
+        QT_MOC_LITERAL(68, 9),  // "movePiece"
+        QT_MOC_LITERAL(78, 10),  // "pieceIndex"
+        QT_MOC_LITERAL(89, 9),  // "resetGame"
+        QT_MOC_LITERAL(99, 5),  // "board"
+        QT_MOC_LITERAL(105, 12),  // "initialBoard"
+        QT_MOC_LITERAL(118, 7),  // "nPieces"
+        QT_MOC_LITERAL(126, 5),  // "nRows"
+        QT_MOC_LITERAL(132, 5),  // "nCols"
+        QT_MOC_LITERAL(138, 9)   // "voidPiece"
     },
     "Controller",
     "boardChanged",
@@ -70,7 +70,7 @@ Q_CONSTINIT static const qt_meta_stringdata_Controller_t qt_meta_stringdata_Cont
     "initialBoardChanged",
     "createBoard",
     "difficulty",
-    "pieceClicked",
+    "movePiece",
     "pieceIndex",
     "resetGame",
     "board",
@@ -153,7 +153,7 @@ Q_CONSTINIT const QMetaObject Controller::staticMetaObject = { {
         // method 'createBoard'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        // method 'pieceClicked'
+        // method 'movePiece'
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'resetGame'
@@ -171,7 +171,7 @@ void Controller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->boardChanged(); break;
         case 1: _t->initialBoardChanged(); break;
         case 2: _t->createBoard((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: { bool _r = _t->pieceClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 3: { bool _r = _t->movePiece((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 4: _t->resetGame(); break;
         default: ;

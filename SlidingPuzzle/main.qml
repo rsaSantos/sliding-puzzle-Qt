@@ -110,7 +110,7 @@ Window {
                     anchors.fill: parent
                     onClicked:
                     {
-                        var win = controller.pieceClicked(index)
+                        var win = controller.movePiece(index)
                         if(win)
                         {
                             win_popup.open()

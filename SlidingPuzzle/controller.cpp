@@ -20,21 +20,10 @@ void Controller::createBoard(QString difficulty)
     qDebug() << "Creating a board with" << difficulty << "difficulty.";
 
     // Create board list...
-    QList<QString> newBoard;
+    QList<QString> newBoard = QList<QString>();
 
-    // Check difficulties
-    if(difficulty == "default")
-    {
-        // Set default board
-        // First 15 pieces
-        for (int i = 1; i < 16; ++i) {
-            newBoard.append(QString::number(i));
-        }
-
-        // Empty piece
-        newBoard.append(voidPiece());
-    }
-    else if(difficulty == "random")
+    // TODO: VERIFY!
+    if(difficulty == "random")
     {
         // Seed random number generator.
         std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -65,6 +54,67 @@ void Controller::createBoard(QString difficulty)
         int sixteenthIndex = newBoard.indexOf("16");
         newBoard.replace(sixteenthIndex, voidPiece());
     }
+    else{
+        int nMoves = 0;
+        if(difficulty == "easy")
+        {
+            nMoves = 10;
+        }
+        else if(difficulty == "medium")
+        {
+            nMoves = 25;
+        }
+        else if(difficulty == "hard")
+        {
+            nMoves = 50;
+        }
+
+        // Set default board
+        // First 15 pieces
+        for (int i = 1; i < 16; ++i) {
+            newBoard.append(QString::number(i));
+        }
+
+        // Empty piece
+        newBoard.append(voidPiece());
+
+        // Position of void piece.
+        int emptyIndex = newBoard.indexOf(voidPiece());
+
+        // Last random move.
+        int lastRandomMove = -1;
+
+        // Simulate random moves.
+        for(int i = 0; i < nMoves; ++i)
+        {
+            // Get possible moves
+            //  aka indexes that the voidPiece can be moved.
+            QList<int> possibleMoves = QList<int>(0);
+            for(int j = 0; j < nPieces() - 1; ++j)
+            {
+                if(isMovable(newBoard, j, emptyIndex))
+                {
+                    possibleMoves.append(j);
+                }
+            }
+
+            // If there are moves to be made
+            if(possibleMoves.size() > 0)
+            {
+                // Choose random move (and update last one)
+                int randomIndex = std::rand() % possibleMoves.size();
+                lastRandomMove = emptyIndex;
+
+                // Swap positions in the board
+                int randomMove = possibleMoves.at(randomIndex);
+                newBoard.swapItemsAt(emptyIndex, randomMove);
+
+                // Update empty index
+                emptyIndex = randomMove;
+            }
+        }
+    }
+
 
     // Set as the initial board.
     setInitialBoard(newBoard);
@@ -73,26 +123,9 @@ void Controller::createBoard(QString difficulty)
     setBoard(newBoard);
 }
 
-/**
- * @brief Controller::pieceClicked
- * @param movingIndex
- * @return
- */
-bool Controller::pieceClicked(int movingIndex)
+// Check if it is possible to move a given piece of the board.
+bool Controller::isMovable(QList<QString> board, int movingIndex, int emptyIndex)
 {
-    // Return win or no win..
-    bool win = true;
-
-    // Check if piece can be moved...
-    // In order to be moved, the specific piece has to have
-    //  an adjacent empty square.
-    //
-    // Get current board
-    QList<QString> newBoard = board();
-
-    // Get empty square index.
-    int emptyIndex = newBoard.indexOf(voidPiece());
-
     // Check if indexes are adjacent in grid.
     // For that we need the row/column of both the empty piece
     int rowEmptyPiece = emptyIndex / nRows();
@@ -107,7 +140,31 @@ bool Controller::pieceClicked(int movingIndex)
 
     // If both values are <= 1 it means the moving piece is adjacent to the empty one.
     // BUT at least one of the values has to be zero in order to avoid the diagonal.
-    if(rowDistance <= 1 && colDistance <= 1 && (rowDistance == 0 || colDistance == 0))
+    return rowDistance <= 1 && colDistance <= 1 && (rowDistance == 0 || colDistance == 0);
+}
+
+/**
+ * @brief Controller::pieceClicked
+ * @param movingIndex
+ * @return
+ */
+bool Controller::movePiece(int movingIndex)
+{
+    // Return win or no win..
+    bool win = true;
+
+    // Check if piece can be moved...
+    // In order to be moved, the specific piece has to have
+    //  an adjacent empty square.
+    //
+    // Get current board
+    QList<QString> newBoard = board();
+
+    // Get empty square index.
+    int emptyIndex = newBoard.indexOf(voidPiece());
+
+    // Check if piece is movable.
+    if(isMovable(newBoard, movingIndex, emptyIndex))
     {
         // Swap pieces...
         newBoard.swapItemsAt(emptyIndex, movingIndex);
