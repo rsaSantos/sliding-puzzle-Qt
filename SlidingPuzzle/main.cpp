@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     // Create board
-    controller->createBoard("");
+    controller->createBoard("medium");
 
     return app.exec();
 }

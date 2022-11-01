@@ -16,6 +16,10 @@ Window {
                     onTriggered: controller.resetGame()
                 }
                 MenuItem {
+                    text: qsTr("New Game")
+                    onTriggered: controller.resetGame()
+                }
+                MenuItem {
                     text: qsTr("Exit")
                     onTriggered: Qt.quit()
                 }
@@ -25,12 +29,12 @@ Window {
     // Board rectangle.
     Rectangle {
         id : board
-        width: parent.width - 20
-        height: parent.height - 20
+        width: parent.width - 100
+        height: parent.height - 100
         color: "lightgray"
         border.color: "black"
-        x: 10
-        y: 10
+        x: 50
+        y: 50
 
         // Size of each piece.
         property int pieceWidth: width / controller.nCols
