@@ -1,0 +1,9 @@
+-rootPath
+/home/rubensas/Work/Interview/sliding-puzzle-Qt/SlidingPuzzle
+-cmake-output
+-output-file
+/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_SlidingPuzzle.cmake
+-importPath
+/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug
+-importPath
+/usr/lib/qt6/qml

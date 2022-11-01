@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen",
+	"CMAKE_BINARY_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/SlidingPuzzle",
+	"CMAKE_SOURCE_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/SlidingPuzzle",
+	"INCLUDE_DIR" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/SlidingPuzzle_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/rubensas/Work/Interview/sliding-puzzle-Qt/SlidingPuzzle/main.qml"
+	],
+	"LOCK_FILE" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/CMakeFiles/SlidingPuzzle_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/build-SlidingPuzzle-Desktop-Debug/CMakeFiles/SlidingPuzzle_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/rubensas/Work/Interview/sliding-puzzle-Qt/SlidingPuzzle/qml.qrc",
+	"VERBOSITY" : 0
+}
