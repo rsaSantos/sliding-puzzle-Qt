@@ -8,6 +8,8 @@ Window {
     visible: true
     title: qsTr("Sliding Puzzle")
 
+    property string difficulty: "default"
+
     MenuBar {
             Menu {
                 title: qsTr("Game")
@@ -17,11 +19,30 @@ Window {
                 }
                 MenuItem {
                     text: qsTr("New Game")
-                    onTriggered: controller.resetGame()
+                    onTriggered: controller.createBoard(difficulty)
                 }
                 MenuItem {
                     text: qsTr("Exit")
                     onTriggered: Qt.quit()
+                }
+            }
+            Menu {
+                title: qsTr("Difficulty")
+                MenuItem{
+                    text: qsTr("Easy")
+                    onTriggered: difficulty = "easy"
+                }
+                MenuItem{
+                    text: qsTr("Medium")
+                    onTriggered: difficulty = "medium"
+                }
+                MenuItem{
+                    text: qsTr("Hard")
+                    onTriggered: difficulty = "hard"
+                }
+                MenuItem{
+                    text: qsTr("Random")
+                    onTriggered: difficulty = "random"
                 }
             }
         }

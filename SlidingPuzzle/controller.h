@@ -2,7 +2,13 @@
 #define CONTROLLER_H
 
 #include <QObject>
+#include <QDebug>
 #include <QList>
+
+// Random numbers
+#include <cstdlib>
+#include <ctime>
+#define MAX_RAND_ITERATIONS 999
 
 class Controller : public QObject
 {

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-114dd9132641d59c6b63.json",
+					"jsonFile" : "directory-.-Debug-d8c19eb5c6d78b79cdfe.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -46,7 +46,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SlidingPuzzle::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SlidingPuzzle-Debug-fd07b6aeefc7e61e9cbb.json",
+					"jsonFile" : "target-SlidingPuzzle-Debug-4144ca2af32daee50049.json",
 					"name" : "SlidingPuzzle",
 					"projectIndex" : 0
 				},
@@ -67,7 +67,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SlidingPuzzle_qmlimportscan::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SlidingPuzzle_qmlimportscan-Debug-79fc8df6473cede0c372.json",
+					"jsonFile" : "target-SlidingPuzzle_qmlimportscan-Debug-2c28c382672b17e2bfd1.json",
 					"name" : "SlidingPuzzle_qmlimportscan",
 					"projectIndex" : 0
 				}

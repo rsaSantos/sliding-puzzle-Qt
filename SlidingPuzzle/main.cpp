@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
-    // Create board
-    controller->createBoard("medium");
+    // TODO: CHANGE LATER: Create default board
+    controller->createBoard("default");
 
     return app.exec();
 }

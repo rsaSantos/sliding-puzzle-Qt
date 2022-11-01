@@ -11,19 +11,60 @@ Controller::Controller(QObject *parent)
 {
 }
 
+/**
+ * @brief Controller::createBoard
+ * @param difficulty: easy, mediuum, hard, default
+ */
 void Controller::createBoard(QString difficulty)
 {
+    qDebug() << "Creating a board with" << difficulty << "difficulty.";
+
     // Create board list...
     QList<QString> newBoard;
 
-    // Set default board
-    // First 15 pieces
-    for (int i = 1; i < 16; ++i) {
-        newBoard.append(QString::number(i));
-    }
+    // Check difficulties
+    if(difficulty == "default")
+    {
+        // Set default board
+        // First 15 pieces
+        for (int i = 1; i < 16; ++i) {
+            newBoard.append(QString::number(i));
+        }
 
-    // Empty piece
-    newBoard.append(voidPiece());
+        // Empty piece
+        newBoard.append(voidPiece());
+    }
+    else if(difficulty == "random")
+    {
+        // Seed random number generator.
+        std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+        // Set random board
+        for (int i = 0; i < 16; ++i) {
+            // Prevent infine loop by counting iterations
+            int iterations = 0;
+
+            int randomNumber = (std::rand() % 16) + 1;
+            while(iterations < MAX_RAND_ITERATIONS && newBoard.contains(QString::number(randomNumber)))
+            {
+                randomNumber = (std::rand() % 16) + 1;
+                iterations++;
+            }
+
+            // If number of iterations was exceeded, create default board.
+            if(iterations == MAX_RAND_ITERATIONS)
+            {
+                createBoard("default");
+                return;
+            }
+
+            newBoard.append(QString::number(randomNumber));
+        }
+
+        // Replace number 16 with void piece.
+        int sixteenthIndex = newBoard.indexOf("16");
+        newBoard.replace(sixteenthIndex, voidPiece());
+    }
 
     // Set as the initial board.
     setInitialBoard(newBoard);
@@ -32,6 +73,11 @@ void Controller::createBoard(QString difficulty)
     setBoard(newBoard);
 }
 
+/**
+ * @brief Controller::pieceClicked
+ * @param movingIndex
+ * @return
+ */
 bool Controller::pieceClicked(int movingIndex)
 {
     // Return win or no win..
