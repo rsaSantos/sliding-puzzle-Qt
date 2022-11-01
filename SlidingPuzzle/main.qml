@@ -47,6 +47,24 @@ Window {
             }
         }
 
+    // Winning popup
+    Popup {
+            id: win_popup
+            anchors.centerIn: parent
+            width: 350
+            height: 50
+            modal: true
+            focus: true
+            closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+            contentItem: Text
+            {
+                text: "Congratulations! You just won the game!"
+                font.bold: true
+                font.pixelSize: 15
+                color: "white"
+            }
+        }
+
     // Board rectangle.
     Rectangle {
         id : board
@@ -95,8 +113,7 @@ Window {
                         var win = controller.pieceClicked(index)
                         if(win)
                         {
-                            console.log("Congratulations! You just won the game!")
-                            Qt.quit()
+                            win_popup.open()
                         }
                     }
                 }
